@@ -1,11 +1,14 @@
 # A Versao Sua Que Voce Sente Falta
 
-Landing page compacta para venda de ebook.
+Landing page compacta para venda de ebook, preparada para deploy na Vercel como Next.js.
 
 ## Rodar localmente
 
-Abra `index.html` no navegador ou sirva a pasta com qualquer servidor estatico.
+```bash
+npm install
+npm run dev
+```
 
 ## Publicar na Vercel
 
-Este projeto e estatico. A Vercel pode publicar diretamente a partir da raiz do repositorio.
+O projeto usa Next.js para bater com a configuracao atual do projeto na Vercel.
