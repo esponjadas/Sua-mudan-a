@@ -295,6 +295,7 @@ h2 {
 
 .auto-section,
 .inside,
+.teaser,
 .receive,
 .pricing-card,
 .reviews,
@@ -371,6 +372,7 @@ h2 {
 }
 
 .inside-grid article,
+.teaser-grid article,
 .review-grid article,
 .faq-item,
 .receive,
@@ -397,6 +399,7 @@ h2 {
 }
 
 .inside-grid article strong,
+.teaser-grid article strong,
 .review-grid article strong {
   display: block;
   margin: 18px 0 10px;
@@ -406,12 +409,63 @@ h2 {
 }
 
 .inside-grid article p,
+.teaser-grid article p,
 .receive p,
 .review-grid article p,
 .faq-item p {
   margin: 0;
   color: var(--muted);
   line-height: 1.68;
+}
+
+.teaser {
+  overflow: hidden;
+}
+
+.teaser::before {
+  content: "";
+  position: absolute;
+  inset: 8% 12% auto;
+  height: 260px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(232, 197, 124, 0.12), transparent 62%);
+  filter: blur(30px);
+}
+
+.teaser-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.teaser-grid article {
+  min-height: 210px;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.teaser-grid article::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 90px;
+  height: 18px;
+  background: linear-gradient(90deg, rgba(232, 197, 124, 0.28), transparent);
+  filter: blur(10px);
+  opacity: 0.6;
+}
+
+.teaser-grid article span {
+  color: rgba(232, 197, 124, 0.72);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.teaser-grid article strong {
+  max-width: 92%;
 }
 
 .receive {
@@ -580,6 +634,15 @@ h2 {
   margin-bottom: 14px;
   color: rgba(232, 197, 124, 0.84);
   font-weight: 700;
+}
+
+.final-cta__sub {
+  max-width: 640px;
+  margin-right: auto;
+  margin-left: auto;
+  color: var(--muted) !important;
+  font-weight: 400 !important;
+  line-height: 1.7;
 }
 
 .final-cta h2 {
@@ -843,6 +906,7 @@ h2 {
 
   .auto-section,
   .inside,
+  .teaser,
   .receive,
   .pricing,
   .reviews,
@@ -885,12 +949,14 @@ h2 {
   }
 
   .inside-grid,
+  .teaser-grid,
   .review-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
   .inside-grid article,
+  .teaser-grid article,
   .review-grid article {
     min-height: auto;
     padding: 22px;

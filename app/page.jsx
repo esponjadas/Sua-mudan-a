@@ -10,30 +10,39 @@ import {
 } from "framer-motion";
 
 const insideItems = [
-  ["01", "alimentação sem terrorismo", "Escolhas simples para comer melhor sem medo, culpa ou regras impossíveis."],
-  ["02", "treino para iniciantes", "Movimentos possíveis para voltar ao corpo sem precisar performar para ninguém."],
-  ["03", "autoestima e mentalidade", "Exercícios curtos para reconstruir confiança de forma silenciosa e real."],
-  ["04", "plano de 30 dias", "Um caminho guiado para saber o que fazer quando a motivação não aparece."],
-  ["05", "hábitos sustentáveis", "Mudanças pequenas o suficiente para caberem numa vida normal."],
-  ["06", "constância realista", "Como continuar depois de falhar sem transformar um dia ruim em desistência."],
-  ["07", "rotina saudável", "Sono, alimentação, movimento e ambiente organizados com mais leveza."],
-  ["08", "evolução gradual", "Progresso sem pressa artificial, com atenção ao que muda por dentro."],
+  ["01", "o automatico que te puxou", "Entenda por que voce repete padroes mesmo querendo mudar, sem se chamar de fraco."],
+  ["02", "comparacao, culpa e vergonha", "O ebook toca nas partes silenciosas que fazem a pessoa travar antes de comecar."],
+  ["03", "corpo, sono e ansiedade", "Uma leitura simples sobre como seu corpo tambem guarda cansaco, tensao e falta de direcao."],
+  ["04", "o principio do 1%", "Pequenas vitorias, rotina realista e o motivo de motivacao quase nunca vir primeiro."],
+  ["05", "alimentacao realista", "Comida, agua e fome emocional tratados com cuidado, nao com terrorismo ou punicao."],
+  ["06", "movimento para iniciantes", "Um caminho de 30 dias para voltar a se mover sem transformar treino em castigo."],
+  ["07", "ambiente e rotina", "Como seu quarto, celular, sono e casa influenciam decisoes que parecem so falta de forca."],
+  ["08", "recaidas e retorno", "O que fazer quando voce some por alguns dias e precisa voltar sem culpa."],
+];
+
+const teaserChapters = [
+  ["Voce nao esta quebrado. Voce esta esgotado.", "Um comeco para parar de se enxergar como problema."],
+  ["O mito da virada", "Por que esperar uma grande mudanca costuma atrasar o primeiro passo."],
+  ["A vergonha atrasa o retorno", "Uma parte curta, mas importante, sobre voltar depois de falhar."],
+  ["Seu ambiente toma decisoes por voce", "Um olhar sobre casa, celular, comida visivel e energia mental."],
+  ["Protocolo de retorno", "Um caminho gentil para recomecar quando voce se perde por alguns dias."],
+  ["Seu scorecard de transformacao", "Um jeito simples de medir cuidado sem virar refem da perfeicao."],
 ];
 
 const tags = [
   "culpa",
-  "desânimo",
-  "comparação",
+  "desanimo",
+  "comparacao",
   "rotina quebrada",
   "baixa autoestima",
-  "procrastinação",
-  "cansaço mental",
+  "procrastinacao",
+  "cansaco mental",
 ];
 
 const reviews = [
   [
     "M",
-    "Não foi uma transformação absurda. Mas foi a primeira vez em muito tempo que consegui manter uma rotina sem me sentir pressionada.",
+    "Nao foi uma transformacao absurda. Mas foi a primeira vez em muito tempo que consegui manter uma rotina sem me sentir pressionada.",
     "Mariana, 27 anos",
   ],
   [
@@ -43,7 +52,7 @@ const reviews = [
   ],
   [
     "F",
-    "Gostei porque não parece aquelas coisas impossíveis da internet. É simples e humano.",
+    "Gostei porque nao parece aquelas coisas impossiveis da internet. E simples e humano.",
     "Fernanda, 24 anos",
   ],
   [
@@ -56,31 +65,31 @@ const reviews = [
 const faqs = [
   [
     "Esse ebook serve para iniciantes?",
-    "Sim. Ele foi pensado para quem quer recomeçar sem se sentir atrasado ou perdido.",
+    "Sim. Ele foi pensado para quem quer recomecar sem se sentir atrasado ou perdido.",
   ],
   [
     "Preciso fazer dieta extrema?",
-    "Não. A proposta é alimentação sem terrorismo, com ajustes pequenos e sustentáveis.",
+    "Nao. A proposta e alimentacao sem terrorismo, com ajustes pequenos e sustentaveis.",
   ],
   [
     "Vou receber o ebook na hora?",
-    "Sim. Depois da compra, o acesso é digital e imediato.",
+    "Sim. Depois da compra, o acesso e digital e imediato.",
   ],
   [
     "Posso ler pelo celular?",
     "Pode. O ebook foi feito para leitura simples no celular, tablet ou computador.",
   ],
   [
-    "É pagamento único?",
-    "Sim. Você paga uma vez e acessa o material digital.",
+    "E pagamento unico?",
+    "Sim. Voce paga uma vez e acessa o material digital.",
   ],
   [
     "Preciso treinar em academia?",
-    "Não. O foco é começar com movimento possível, mesmo em casa.",
+    "Nao. O foco e comecar com movimento possivel, mesmo em casa.",
   ],
   [
     "Quanto tempo por dia preciso dedicar?",
-    "Poucos minutos já bastam para ler e aplicar uma ação do dia. O importante é constância.",
+    "Poucos minutos ja bastam para ler e aplicar uma acao do dia. O importante e constancia.",
   ],
 ];
 
@@ -139,18 +148,19 @@ export default function Page() {
           animate="visible"
         >
           <motion.p className="eyebrow" variants={fadeUp}>
-            Ebook digital • plano de 30 dias
+            Ebook digital - plano de 30 dias
           </motion.p>
 
           <motion.h1 id="hero-title" variants={fadeUp}>
             Volte para
-            <span>a versão sua</span>
-            que você sente falta.
+            <span>a versao sua</span>
+            que voce sente falta.
           </motion.h1>
 
           <motion.p className="hero__lead" variants={fadeUp}>
-            Um ebook para quem cansou de prometer recomeços no silêncio. Menos
-            pressão, mais direção: corpo, mente e rotina.
+            Um ebook para quem cansou de prometer recomecos no silencio. Menos
+            pressao, mais direcao: corpo, mente e rotina. A landing mostra o
+            mapa; o ebook guarda o passo a passo para quando voce decidir abrir.
           </motion.p>
 
           <motion.div className="hero__actions" variants={fadeUp}>
@@ -181,8 +191,8 @@ export default function Page() {
       <Reveal>
         <section className="auto-section" aria-labelledby="auto-title">
           <div>
-            <p className="eyebrow">Para quem é</p>
-            <h2 id="auto-title">Para quem sente que entrou no automático.</h2>
+            <p className="eyebrow">Para quem e</p>
+            <h2 id="auto-title">Para quem sente que entrou no automatico.</h2>
           </div>
           <motion.div
             className="tag-cloud"
@@ -207,7 +217,12 @@ export default function Page() {
       <section className="inside" id="conteudo" aria-labelledby="inside-title">
         <Reveal className="section-heading">
           <p className="eyebrow">Dentro do ebook</p>
-          <h2 id="inside-title">O que você vai encontrar</h2>
+          <h2 id="inside-title">O que voce vai encontrar</h2>
+          <p>
+            Ele nao entrega so frases bonitas. Ele passa por comparacao, culpa,
+            sono, ansiedade, alimentacao, movimento, ambiente, recaidas e um
+            plano de 30 dias para voce voltar com calma.
+          </p>
         </Reveal>
 
         <motion.div
@@ -232,22 +247,46 @@ export default function Page() {
         </motion.div>
       </section>
 
+      <section className="teaser" aria-labelledby="teaser-title">
+        <Reveal className="section-heading">
+          <p className="eyebrow">Um pouco do que existe la dentro</p>
+          <h2 id="teaser-title">Paginas feitas para voce se reconhecer.</h2>
+        </Reveal>
+
+        <motion.div
+          className="teaser-grid"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-70px" }}
+        >
+          {teaserChapters.map(([title, text], index) => (
+            <motion.article key={title} variants={fadeUp}>
+              <span>0{index + 1}</span>
+              <strong>{title}</strong>
+              <p>{text}</p>
+            </motion.article>
+          ))}
+        </motion.div>
+      </section>
+
       <Reveal>
         <section className="receive" aria-labelledby="receive-title">
           <motion.img
             src="/images/premium-ebook.png"
-            alt="Fotografia premium do ebook A versão sua que você sente falta"
+            alt="Fotografia premium do ebook A versao sua que voce sente falta"
             style={{ y: ebookY }}
             animate={reduceMotion ? {} : { y: [0, -14, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           />
           <div>
-            <p className="eyebrow">O que você vai receber</p>
-            <h2 id="receive-title">Um guia digital com aparência calma e aplicação real.</h2>
+            <p className="eyebrow">O que voce vai receber</p>
+            <h2 id="receive-title">Um guia digital com leitura emocional e aplicacao real.</h2>
             <p>
-              Nada de promessa teatral. O material foi pensado para caber na sua
-              vida: ler, aplicar, falhar menos, voltar mais rápido e sentir que
-              existe uma direção possível.
+              Dentro dele voce encontra reflexoes, checklists, trackers, plano
+              de 30 dias, rotina de manha e noite, alimentacao realista, movimento
+              iniciante e um protocolo para voltar quando falhar. A promessa nao
+              e virar outra pessoa. E voltar a cuidar de voce com mais clareza.
             </p>
           </div>
         </section>
@@ -256,16 +295,16 @@ export default function Page() {
       <section className="pricing" id="preco" aria-labelledby="pricing-title">
         <Reveal className="pricing-card">
           <p className="eyebrow">Acesso digital imediato</p>
-          <h2 id="pricing-title">Comece hoje com um passo pequeno, mas claro.</h2>
+          <h2 id="pricing-title">Se isso parece falar com voce, talvez esse seja o primeiro passo.</h2>
           <div className="pricing-card__body">
             <img
               src="/images/premium-ebook.png"
-              alt="Ebook premium sobre autoestima, energia e confiança"
+              alt="Ebook premium sobre autoestima, energia e confianca"
             />
             <div className="price-box">
               <span className="old-price">De R$97,90</span>
               <strong>Por apenas R$29,90</strong>
-              <p>Pagamento único • acesso imediato</p>
+              <p>Pagamento unico - acesso imediato - ebook digital completo</p>
               <a className="button button--primary button--wide" href={ctaHref}>
                 QUERO COMEÇAR AGORA
               </a>
@@ -276,8 +315,8 @@ export default function Page() {
 
       <section className="reviews" aria-labelledby="reviews-title">
         <Reveal className="section-heading">
-          <p className="eyebrow">Relatos possíveis</p>
-          <h2 id="reviews-title">Pequenas mudanças. Sensações reais.</h2>
+          <p className="eyebrow">Relatos possiveis</p>
+          <h2 id="reviews-title">Pequenas mudancas. Sensacoes reais.</h2>
         </Reveal>
 
         <motion.div
@@ -290,8 +329,8 @@ export default function Page() {
           {reviews.map(([initial, quote, name]) => (
             <motion.article key={name} variants={fadeUp}>
               <span>{initial}</span>
-              <p>“{quote}”</p>
-              <strong>— {name}</strong>
+              <p>"{quote}"</p>
+              <strong>- {name}</strong>
             </motion.article>
           ))}
         </motion.div>
@@ -299,11 +338,15 @@ export default function Page() {
 
       <section className="final-cta" aria-label="Chamada final">
         <Reveal>
-          <p>Você não precisa virar outra pessoa.</p>
-          <h2>Só precisa voltar a cuidar de você.</h2>
+          <p>Voce nao precisa virar outra pessoa.</p>
+          <h2>So precisa voltar a cuidar de voce.</h2>
+          <p className="final-cta__sub">
+            O ebook esta pronto para te guiar com calma: do automatico ao primeiro
+            passo, da culpa ao retorno, da rotina quebrada ao cuidado possivel.
+          </p>
           <motion.img
             src="/images/premium-ebook.png"
-            alt="Ebook A versão sua que você sente falta"
+            alt="Ebook A versao sua que voce sente falta"
             animate={reduceMotion ? {} : { y: [0, -12, 0] }}
             transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
           />
@@ -335,7 +378,7 @@ export default function Page() {
                   onClick={() => setOpenFaq(isOpen ? -1 : index)}
                 >
                   <span>{question}</span>
-                  <b aria-hidden="true">{isOpen ? "−" : "+"}</b>
+                  <b aria-hidden="true">{isOpen ? "-" : "+"}</b>
                 </button>
                 <AnimatePresence initial={false}>
                   {isOpen && (
@@ -356,7 +399,7 @@ export default function Page() {
         </div>
       </section>
 
-      <nav className="mobile-bar" aria-label="Compra rápida">
+      <nav className="mobile-bar" aria-label="Compra rapida">
         <div>
           <span>R$29,90</span>
           <strong>Acesso imediato</strong>
