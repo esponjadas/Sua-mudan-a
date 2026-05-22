@@ -1,9 +1,9 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Volte Para Voce | Ebook Premium",
+  title: "Volte Para Você | Ebook Premium",
   description:
-    "Um guia emocional e pratico para recuperar energia, autoestima e presenca atraves de pequenas mudancas reais.",
+    "Um guia emocional e prático para recuperar energia, autoestima e presença através de pequenas mudanças reais.",
 };
 
 export default function RootLayout({ children }) {

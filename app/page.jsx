@@ -7,55 +7,55 @@ const BUY_LINK = "LINK_DO_CACTO_AQUI";
 const SUPPORT_LINK = "mailto:guia.volteparavoce@gmail.com";
 
 const navItems = [
-  ["inicio", "Inicio"],
+  ["inicio", "Início"],
   ["dentro", "Dentro"],
   ["produto", "Produto"],
-  ["experiencia", "Experiencia"],
+  ["experiencia", "Experiência"],
   ["comprar", "Comprar"],
 ];
 
 const features = [
-  ["01", "Autoestima", "Reflexoes para voltar a se olhar com menos dureza.", "Olhar"],
+  ["01", "Autoestima", "Reflexões para voltar a se olhar com menos dureza.", "Olhar"],
   ["02", "Rotina", "Pequenos rituais para organizar dias que parecem pesados.", "Ritmo"],
-  ["03", "Alimentacao", "Comida realista, sem terrorismo e sem culpa.", "Corpo"],
-  ["04", "Sono", "Descanso como parte da reconstrucao emocional.", "Calma"],
-  ["05", "Ambiente", "Seu espaco como aliado silencioso das boas decisoes.", "Casa"],
-  ["06", "Recomeco", "Um protocolo gentil para voltar quando voce se perder.", "Volta"],
-  ["07", "Silencio mental", "Exercicios para desacelerar sem transformar calma em meta.", "Pausa"],
-  ["08", "Plano de 7 dias", "Uma entrada leve para sentir movimento antes dos 30 dias.", "Inicio"],
-  ["09", "Reflexoes pessoais", "Perguntas que aproximam voce de si, sem exposicao.", "Escrita"],
+  ["03", "Alimentação", "Comida realista, sem terrorismo e sem culpa.", "Corpo"],
+  ["04", "Sono", "Descanso como parte da reconstrução emocional.", "Calma"],
+  ["05", "Ambiente", "Seu espaço como aliado silencioso das boas decisões.", "Casa"],
+  ["06", "Recomeço", "Um protocolo gentil para voltar quando você se perder.", "Volta"],
+  ["07", "Silêncio mental", "Exercícios para desacelerar sem transformar calma em meta.", "Pausa"],
+  ["08", "Plano de 7 dias", "Uma entrada leve para sentir movimento antes dos 30 dias.", "Início"],
+  ["09", "Reflexões pessoais", "Perguntas que aproximam você de si, sem exposição.", "Escrita"],
 ];
 
 const differences = [
-  ["Sem linguagem coach", "Nada de frases prontas. O tom e humano, baixo e real."],
-  ["Sem promessas irreais", "A proposta e direcao, nao perfeicao instantanea."],
-  ["Pequenas mudancas reais", "A pagina vira gesto, e o gesto vira rotina."],
-  ["Leitura confortavel", "Textos curtos, respiro visual e ritmo de celular."],
-  ["Experiencia emocional", "Design, copy e exercicios trabalham juntos."],
-  ["Sistema leve de recomeco", "Plano simples para voltar sem se atropelar."],
+  ["Sem linguagem coach", "Nada de frases prontas. O tom é humano, baixo e real."],
+  ["Sem promessas irreais", "A proposta é direção, não perfeição instantânea."],
+  ["Pequenas mudanças reais", "A página vira gesto, e o gesto vira rotina."],
+  ["Leitura confortável", "Textos curtos, respiro visual e ritmo de celular."],
+  ["Experiência emocional", "Design, copy e exercícios trabalham juntos."],
+  ["Sistema leve de recomeço", "Plano simples para voltar sem se atropelar."],
 ];
 
 const chapters = [
-  ["Parte 01", "O automatico", "Comparacao, culpa, ansiedade e o cansaco de se abandonar aos poucos."],
-  ["Parte 02", "Corpo e rotina", "Sono, agua, alimentacao, movimento e pequenos habitos sustentaveis."],
-  ["Parte 03", "Sistema dos 30 dias", "Presenca, estrutura, disciplina emocional e consolidacao."],
-  ["Parte 04", "Retorno", "Recaidas, vergonha, protocolo de volta, checklists e reflexoes finais."],
+  ["Parte 01", "O automático", "Comparação, culpa, ansiedade e o cansaço de se abandonar aos poucos."],
+  ["Parte 02", "Corpo e rotina", "Sono, água, alimentação, movimento e pequenos hábitos sustentáveis."],
+  ["Parte 03", "Sistema dos 30 dias", "Presença, estrutura, disciplina emocional e consolidação."],
+  ["Parte 04", "Retorno", "Recaídas, vergonha, protocolo de volta, checklists e reflexões finais."],
 ];
 
 const benefits = [
   "Recuperar energia aos poucos",
-  "Diminuir a sensacao de caos",
+  "Diminuir a sensação de caos",
   "Voltar a cuidar de si",
   "Melhorar a rotina sem rigidez",
-  "Diminuir exaustao mental",
-  "Criar pequenos habitos",
-  "Reconectar com sua propria vida",
+  "Diminuir exaustão mental",
+  "Criar pequenos hábitos",
+  "Reconectar com sua própria vida",
 ];
 
 const testimonials = [
   ["Pela primeira vez em meses eu senti vontade de cuidar de mim.", "Marina, 28"],
-  ["Esse ebook parece um abraco silencioso. Nao me acelerou, me organizou.", "Clara, 32"],
-  ["Nao me senti cobrada. Me senti lembrada.", "Rafael, 29"],
+  ["Esse ebook parece um abraço silencioso. Não me acelerou, me organizou.", "Clara, 32"],
+  ["Não me senti cobrada. Me senti lembrada.", "Rafael, 29"],
 ];
 
 const reveal = {
@@ -74,11 +74,13 @@ const stagger = {
 
 function Brand() {
   return (
-    <a className="brand" href="#inicio" aria-label="Volte Para Voce">
-      <span className="brand__seal">VPV</span>
+    <a className="brand" href="#inicio" aria-label="Volte Para Você">
+      <span className="brand__seal">
+        <img src="/images/brand-logo.png" alt="" aria-hidden="true" />
+      </span>
       <span>
         Volte Para
-        <b>Voce</b>
+        <b>Você</b>
       </span>
     </a>
   );
@@ -118,38 +120,38 @@ function LegalModal({ type, onClose }) {
         </button>
         <p className="eyebrow">{isTerms ? "Termos" : "Privacidade"}</p>
         <h2 id="legal-title">
-          {isTerms ? "Termos de Uso" : "Politica de Privacidade"}
+          {isTerms ? "Termos de Uso" : "Política de Privacidade"}
         </h2>
         {isTerms ? (
           <>
             <p>
-              Este produto e um ebook digital. Ao comprar, voce recebe acesso ao
-              material conforme as instrucoes da plataforma de pagamento.
+              Este produto é um ebook digital. Ao comprar, você recebe acesso ao
+              material conforme as instruções da plataforma de pagamento.
             </p>
             <p>
-              O conteudo tem finalidade educativa e de organizacao pessoal. Ele
-              nao substitui acompanhamento medico, nutricional, psicologico ou
-              qualquer orientacao profissional individualizada.
+              O conteúdo tem finalidade educativa e de organização pessoal. Ele
+              não substitui acompanhamento médico, nutricional, psicológico ou
+              qualquer orientação profissional individualizada.
             </p>
             <p>
-              A distribuicao, revenda, copia ou compartilhamento nao autorizado
-              do material nao e permitido.
+              A distribuição, revenda, cópia ou compartilhamento não autorizado
+              do material não é permitido.
             </p>
           </>
         ) : (
           <>
             <p>
-              Esta pagina coleta apenas as informacoes tecnicas necessarias para
-              funcionamento, navegacao e redirecionamento para a compra.
+              Esta página coleta apenas as informações técnicas necessárias para
+              funcionamento, navegação e redirecionamento para a compra.
             </p>
             <p>
-              Dados de pagamento e entrega sao processados pela plataforma de
-              checkout. Em caso de duvidas, entre em contato pelo email de
-              suporte informado no rodape.
+              Dados de pagamento e entrega são processados pela plataforma de
+              checkout. Em caso de dúvidas, entre em contato pelo email de
+              suporte informado no rodapé.
             </p>
             <p>
-              O email de contato pode ser usado apenas para responder solicitacoes
-              enviadas por voce.
+              O email de contato pode ser usado apenas para responder solicitações
+              enviadas por você.
             </p>
           </>
         )}
@@ -262,22 +264,22 @@ export default function Page() {
               Ebook digital premium
             </motion.p>
             <motion.h1 variants={reveal}>
-              Voce nao precisa virar outra pessoa.
-              <em>So precisa voltar para si.</em>
+              Você não precisa virar outra pessoa.
+              <em>Só precisa voltar para si.</em>
             </motion.h1>
             <motion.p className="lead" variants={reveal}>
-              Um guia emocional e pratico para recuperar energia, autoestima e
-              presenca atraves de pequenas mudancas reais.
+              Um guia emocional e prático para recuperar energia, autoestima e
+              presença através de pequenas mudanças reais.
             </motion.p>
             <motion.div className="actions" variants={reveal}>
-              <BuyButton>Quero comecar meu retorno</BuyButton>
+              <BuyButton>Quero começar meu retorno</BuyButton>
               <a className="button button--ghost" href="#dentro">
                 Ver o que existe dentro
               </a>
             </motion.div>
             <motion.div className="hero__badges" variants={reveal}>
-              <span>90+ paginas</span>
-              <span>Leitura cinematografica</span>
+              <span>90+ páginas</span>
+              <span>Leitura cinematográfica</span>
               <span>Otimizado para celular</span>
             </motion.div>
           </motion.div>
@@ -287,7 +289,7 @@ export default function Page() {
               <motion.img
                 className="book-hero"
                 src="/images/premium-ebook.png"
-                alt="Mockup premium do ebook Volte Para Voce"
+                alt="Mockup premium do ebook Volte Para Você"
                 style={{ y: bookY }}
                 fetchPriority="high"
               />
@@ -304,10 +306,10 @@ export default function Page() {
         </section>
 
         <Reveal className="emotional section">
-          <p>Talvez voce nao esteja cansado da vida.</p>
+          <p>Talvez você não esteja cansado da vida.</p>
           <h2>Talvez esteja cansado de se abandonar.</h2>
           <p>
-            Este ebook nao grita com voce. Ele conversa baixo. Como uma luz
+            Este ebook não grita com você. Ele conversa baixo. Como uma luz
             acesa num quarto escuro, lembrando que ainda existe um caminho de
             volta.
           </p>
@@ -315,11 +317,11 @@ export default function Page() {
 
         <section className="section" id="dentro">
           <Reveal className="section-head">
-            <p className="eyebrow">O que voce vai encontrar</p>
-            <h2>Um mapa calmo para recomecar sem pressa.</h2>
+            <p className="eyebrow">O que você vai encontrar</p>
+            <h2>Um mapa calmo para recomeçar sem pressa.</h2>
             <p>
-              Uma experiencia feita para ser escaneada rapido e sentida devagar:
-              topicos claros, exercicios curtos e paginas que deixam vontade de
+              Uma experiência feita para ser escaneada rápido e sentida devagar:
+              tópicos claros, exercícios curtos e páginas que deixam vontade de
               continuar.
             </p>
           </Reveal>
@@ -346,8 +348,8 @@ export default function Page() {
             <p className="eyebrow">Produto real</p>
             <h2>Mais do que uma capa bonita: uma leitura pensada para caber no seu dia.</h2>
             <p>
-              O ebook combina atmosfera editorial, paginas respiradas e direcao
-              pratica. A pessoa entende o valor antes de comprar, mas ainda fica
+              O ebook combina atmosfera editorial, páginas respiradas e direção
+              prática. A pessoa entende o valor antes de comprar, mas ainda fica
               curiosa para abrir o material inteiro.
             </p>
             <BuyButton>Quero acessar o ebook</BuyButton>
@@ -361,17 +363,17 @@ export default function Page() {
             viewport={{ once: true, margin: "-70px" }}
           >
             <motion.figure className="showcase-book" variants={reveal}>
-              <img src="/images/premium-ebook.png" alt="Fotografia premium do ebook Volte Para Voce" loading="lazy" />
+              <img src="/images/premium-ebook.png" alt="Fotografia premium do ebook Volte Para Você" loading="lazy" />
             </motion.figure>
             <motion.div className="page-preview page-preview--one" variants={reveal}>
               <small>Preview interno</small>
-              <h3>Voce nao esta atrasado. Voce esta voltando.</h3>
-              <p>Um trecho de leitura leve para recuperar presenca sem se cobrar.</p>
+              <h3>Você não está atrasado. Você está voltando.</h3>
+              <p>Um trecho de leitura leve para recuperar presença sem se cobrar.</p>
             </motion.div>
             <motion.div className="page-preview page-preview--two" variants={reveal}>
               <small>Exercicio</small>
               <h3>O que eu consigo fazer hoje?</h3>
-              <p>Uma pergunta por vez. Um gesto pequeno. Uma volta possivel.</p>
+              <p>Uma pergunta por vez. Um gesto pequeno. Uma volta possível.</p>
             </motion.div>
           </motion.div>
         </section>
@@ -379,7 +381,7 @@ export default function Page() {
         <section className="section" id="experiencia">
           <Reveal className="section-head">
             <p className="eyebrow">O que torna diferente</p>
-            <h2>Um ebook para sentir, nao apenas consumir.</h2>
+            <h2>Um ebook para sentir, não apenas consumir.</h2>
           </Reveal>
           <motion.div
             className="difference-grid"
@@ -399,23 +401,23 @@ export default function Page() {
 
         <section className="cinematic-lines section">
           <Reveal>
-            <p>Recomecar devagar ainda e recomecar.</p>
+            <p>Recomeçar devagar ainda é recomeçar.</p>
           </Reveal>
           <Reveal>
-            <p>O silencio tambem cura.</p>
+            <p>O silêncio também cura.</p>
           </Reveal>
           <Reveal>
             <p>Seu ambiente muda sua mente.</p>
           </Reveal>
           <Reveal>
-            <p>Voce merece descansar sem culpa.</p>
+            <p>Você merece descansar sem culpa.</p>
           </Reveal>
         </section>
 
         <section className="contents section">
           <Reveal className="section-head">
             <p className="eyebrow">O que existe dentro</p>
-            <h2>Um sumario que parece uma conversa que voce precisava ter.</h2>
+            <h2>Um sumário que parece uma conversa que você precisava ter.</h2>
           </Reveal>
           <motion.div
             className="contents__grid"
@@ -436,8 +438,8 @@ export default function Page() {
 
         <Reveal className="benefits section">
           <div>
-            <p className="eyebrow">Beneficios reais</p>
-            <h2>Nao e milagre. E direcao.</h2>
+            <p className="eyebrow">Benefícios reais</p>
+            <h2>Não é milagre. É direção.</h2>
           </div>
           <ul>
             {benefits.map((benefit) => (
@@ -448,8 +450,8 @@ export default function Page() {
 
         <section className="testimonials section">
           <Reveal className="section-head">
-            <p className="eyebrow">Sensacoes possiveis</p>
-            <h2>Depoimentos esteticos para sentir o tom.</h2>
+            <p className="eyebrow">Sensações possíveis</p>
+            <h2>Depoimentos estéticos para sentir o tom.</h2>
           </Reveal>
           <motion.div
             className="testimonial-grid"
@@ -473,23 +475,23 @@ export default function Page() {
               <p className="eyebrow">Comece com calma</p>
               <h2>
                 Talvez essa seja a primeira vez em muito tempo
-                <em>que voce esta escolhendo voltar para si.</em>
+                <em>que você está escolhendo voltar para si.</em>
               </h2>
               <p>
-                Acesso digital imediato. Uma compra simples para comecar hoje,
+                Acesso digital imediato. Uma compra simples para começar hoje,
                 sem promessas barulhentas e sem precisar esperar segunda-feira.
               </p>
               <div className="price">
                 <span>De R$97,90</span>
                 <b>Por R$29,90</b>
-                <small>Pagamento unico • acesso imediato</small>
+                <small>Pagamento único • acesso imediato</small>
               </div>
-              <BuyButton>Comecar meu retorno</BuyButton>
+              <BuyButton>Começar meu retorno</BuyButton>
             </div>
             <figure className="final__mockup">
               <img
                 src="/images/premium-ebook.png"
-                alt="Mockup final do ebook Volte Para Voce"
+                alt="Mockup final do ebook Volte Para Você"
                 loading="lazy"
               />
             </figure>
@@ -502,23 +504,23 @@ export default function Page() {
       ) : null}
 
       <a className="mobile-cta" href={BUY_LINK}>
-        Comecar meu retorno
+        Começar meu retorno
       </a>
 
       <footer className="footer">
         <Brand />
         <div className="footer__links">
-          <a href="#inicio">Inicio</a>
+          <a href="#inicio">Início</a>
           <button type="button" onClick={() => setLegalModal("terms")}>
             Termos de Uso
           </button>
           <button type="button" onClick={() => setLegalModal("privacy")}>
-            Politica de Privacidade
+            Política de Privacidade
           </button>
           <a href={SUPPORT_LINK}>Contato</a>
           <a href={SUPPORT_LINK}>Suporte</a>
         </div>
-        <p>&copy; 2026 Volte Para Voce. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Volte Para Você. Todos os direitos reservados.</p>
         <p>
           Suporte: <a href={SUPPORT_LINK}>guia.volteparavoce@gmail.com</a>
         </p>
