@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 
-const BUY_LINK = "https://pay.cakto.com.br/d5bxmrj_895056";
+const BUY_LINK = "LINK_DO_CACTO_AQUI";
 const SUPPORT_LINK = "mailto:guia.volteparavoce@gmail.com";
 
 const navItems = [
@@ -86,9 +86,75 @@ function Brand() {
 
 function BuyButton({ children, className = "button button--primary" }) {
   return (
-    <a className={className} href={BUY_LINK} target="_blank" rel="noreferrer">
+    <a className={className} href={BUY_LINK}>
       {children}
     </a>
+  );
+}
+
+function LegalModal({ type, onClose }) {
+  const isTerms = type === "terms";
+
+  return (
+    <motion.div
+      className="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="legal-title"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
+    >
+      <motion.div
+        className="modal__panel"
+        initial={{ opacity: 0, y: 24, scale: 0.98 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+        onClick={(event) => event.stopPropagation()}
+      >
+        <button className="modal__close" type="button" onClick={onClose} aria-label="Fechar">
+          Fechar
+        </button>
+        <p className="eyebrow">{isTerms ? "Termos" : "Privacidade"}</p>
+        <h2 id="legal-title">
+          {isTerms ? "Termos de Uso" : "Politica de Privacidade"}
+        </h2>
+        {isTerms ? (
+          <>
+            <p>
+              Este produto e um ebook digital. Ao comprar, voce recebe acesso ao
+              material conforme as instrucoes da plataforma de pagamento.
+            </p>
+            <p>
+              O conteudo tem finalidade educativa e de organizacao pessoal. Ele
+              nao substitui acompanhamento medico, nutricional, psicologico ou
+              qualquer orientacao profissional individualizada.
+            </p>
+            <p>
+              A distribuicao, revenda, copia ou compartilhamento nao autorizado
+              do material nao e permitido.
+            </p>
+          </>
+        ) : (
+          <>
+            <p>
+              Esta pagina coleta apenas as informacoes tecnicas necessarias para
+              funcionamento, navegacao e redirecionamento para a compra.
+            </p>
+            <p>
+              Dados de pagamento e entrega sao processados pela plataforma de
+              checkout. Em caso de duvidas, entre em contato pelo email de
+              suporte informado no rodape.
+            </p>
+            <p>
+              O email de contato pode ser usado apenas para responder solicitacoes
+              enviadas por voce.
+            </p>
+          </>
+        )}
+      </motion.div>
+    </motion.div>
   );
 }
 
@@ -110,6 +176,7 @@ function Reveal({ children, className = "", delay = 0 }) {
 export default function Page() {
   const reducedMotion = useReducedMotion();
   const [activeSection, setActiveSection] = useState("inicio");
+  const [legalModal, setLegalModal] = useState(null);
   const { scrollYProgress } = useScroll();
   const progressScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const heroY = useTransform(scrollYProgress, [0, 0.32], [0, reducedMotion ? 0 : -34]);
@@ -136,6 +203,27 @@ export default function Page() {
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!legalModal) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") {
+        setLegalModal(null);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [legalModal]);
 
   return (
     <>
@@ -409,7 +497,11 @@ export default function Page() {
         </section>
       </main>
 
-      <a className="mobile-cta" href={BUY_LINK} target="_blank" rel="noreferrer">
+      {legalModal ? (
+        <LegalModal type={legalModal} onClose={() => setLegalModal(null)} />
+      ) : null}
+
+      <a className="mobile-cta" href={BUY_LINK}>
         Comecar meu retorno
       </a>
 
@@ -417,8 +509,12 @@ export default function Page() {
         <Brand />
         <div className="footer__links">
           <a href="#inicio">Inicio</a>
-          <a href="#">Termos</a>
-          <a href="#">Privacidade</a>
+          <button type="button" onClick={() => setLegalModal("terms")}>
+            Termos de Uso
+          </button>
+          <button type="button" onClick={() => setLegalModal("privacy")}>
+            Politica de Privacidade
+          </button>
           <a href={SUPPORT_LINK}>Contato</a>
           <a href={SUPPORT_LINK}>Suporte</a>
         </div>

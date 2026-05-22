@@ -297,6 +297,16 @@ h2 em {
   will-change: transform;
 }
 
+.button:focus-visible,
+.nav a:focus-visible,
+.footer__links a:focus-visible,
+.footer__links button:focus-visible,
+.mobile-cta:focus-visible,
+.modal__close:focus-visible {
+  outline: 2px solid rgba(212, 180, 131, 0.86);
+  outline-offset: 4px;
+}
+
 .button:hover {
   transform: translateY(-3px) scale(1.012);
 }
@@ -803,7 +813,7 @@ blockquote cite {
 .mobile-cta {
   position: fixed;
   right: 16px;
-  bottom: 16px;
+  bottom: max(16px, env(safe-area-inset-bottom));
   left: 16px;
   z-index: 80;
   display: none;
@@ -820,6 +830,63 @@ blockquote cite {
   font-weight: 700;
   letter-spacing: 0.17em;
   text-decoration: none;
+  text-transform: uppercase;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  background:
+    radial-gradient(circle at 50% 26%, rgba(201, 169, 110, 0.12), transparent 25rem),
+    rgba(5, 5, 5, 0.72);
+  backdrop-filter: blur(18px);
+}
+
+.modal__panel {
+  position: relative;
+  width: min(680px, 100%);
+  max-height: min(76vh, 720px);
+  overflow: auto;
+  padding: clamp(26px, 5vw, 46px);
+  border: 1px solid rgba(221, 208, 187, 0.14);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 80% 0, rgba(201, 169, 110, 0.13), transparent 22rem),
+    linear-gradient(145deg, rgba(28, 26, 23, 0.98), rgba(11, 11, 11, 0.96));
+  box-shadow: 0 48px 140px rgba(0, 0, 0, 0.62);
+}
+
+.modal__panel h2 {
+  margin-bottom: 18px;
+  font-size: clamp(2.3rem, 7vw, 4rem);
+  line-height: 1;
+}
+
+.modal__panel p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  min-height: 40px;
+  border: 1px solid rgba(221, 208, 187, 0.13);
+  border-radius: 999px;
+  padding: 0 16px;
+  color: var(--sand);
+  cursor: pointer;
+  background: rgba(242, 236, 227, 0.06);
+  font-family: "Jost", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -840,12 +907,19 @@ blockquote cite {
 }
 
 .footer__links a,
+.footer__links button,
 .footer p a {
+  border: 0;
+  padding: 0;
   color: var(--muted);
+  cursor: pointer;
+  background: transparent;
+  font: inherit;
   text-decoration: none;
 }
 
 .footer__links a:hover,
+.footer__links button:hover,
 .footer p a:hover {
   color: var(--gold-soft);
 }
@@ -1036,7 +1110,7 @@ blockquote cite {
   }
 
   .footer {
-    padding-bottom: 98px;
+    padding-bottom: 108px;
   }
 }
 
@@ -1057,7 +1131,7 @@ blockquote cite {
 
   .section {
     width: min(100% - 24px, 440px);
-    padding: 72px 0;
+    padding: 78px 0;
   }
 
   .hero {
@@ -1068,6 +1142,22 @@ blockquote cite {
     margin-bottom: 16px;
     font-size: 0.64rem;
     letter-spacing: 0.24em;
+  }
+
+  .button {
+    min-height: 62px;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+  }
+
+  .button--ghost {
+    min-height: 56px;
+  }
+
+  .mobile-cta {
+    right: 12px;
+    left: 12px;
+    min-height: 60px;
   }
 
   h1 {
@@ -1120,6 +1210,18 @@ blockquote cite {
   .footer__links {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .modal {
+    align-items: end;
+    padding: 12px;
+  }
+
+  .modal__panel {
+    max-height: 84vh;
+    border-radius: 26px;
+    padding-top: 54px;
   }
 }
 
