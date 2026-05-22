@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 
-const BUY_LINK = "LINK_DO_CACTO_AQUI";
+const BUY_LINK = "https://pay.cakto.com.br/d5bxmrj_895056";
 const SUPPORT_LINK = "mailto:guia.volteparavoce@gmail.com";
 
 const navItems = [
