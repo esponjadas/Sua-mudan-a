@@ -26,6 +26,20 @@ const features = [
   ["09", "Reflexões pessoais", "Perguntas que aproximam você de si, sem exposição.", "Escrita"],
 ];
 
+const emotionalSignals = [
+  ["viver no automático", "quando o dia acaba e você sente que só cumpriu tarefas"],
+  ["cansaço silencioso", "não é preguiça; é excesso acumulado sem pausa real"],
+  ["distância de si", "a sensação de se reconhecer menos nas próprias escolhas"],
+  ["vontade de voltar", "um recomeço pequeno, sem cobrança e sem espetáculo"],
+];
+
+const productPages = [
+  ["Página de reflexão", "perguntas curtas para organizar o que você sente"],
+  ["Rotina possível", "um roteiro leve para manhã, noite e dias difíceis"],
+  ["Plano de 7 dias", "primeiro movimento para sair da inércia sem se atropelar"],
+  ["Sistema de 30 dias", "estrutura simples para transformar cuidado em constância"],
+];
+
 const differences = [
   ["Sem linguagem coach", "Nada de frases prontas. O tom é humano, baixo e real."],
   ["Sem promessas irreais", "A proposta é direção, não perfeição instantânea."],
@@ -53,9 +67,9 @@ const benefits = [
 ];
 
 const testimonials = [
-  ["Pela primeira vez em meses eu senti vontade de cuidar de mim.", "Marina, 28"],
-  ["Esse ebook parece um abraço silencioso. Não me acelerou, me organizou.", "Clara, 32"],
-  ["Não me senti cobrada. Me senti lembrada.", "Rafael, 29"],
+  ["Eu comprei achando que seria só bonito. Acabei usando como um lugar para me reorganizar sem culpa.", "Marina, 28", "leu no celular"],
+  ["Não me prometeu uma vida nova. Me ajudou a parar de abandonar as pequenas coisas que me fazem bem.", "Clara, 32", "voltando à rotina"],
+  ["Gostei porque parece uma conversa tranquila. Tem prática, mas não tem aquele tom de cobrança.", "Rafael, 29", "plano de 7 dias"],
 ];
 
 const reveal = {
@@ -239,7 +253,7 @@ export default function Page() {
 
       <header className="site-header">
         <Brand />
-        <nav className="nav" aria-label="Navegacao principal">
+        <nav className="nav" aria-label="Navegação principal">
           {navItems.slice(1).map(([id, label]) => (
             <a
               className={activeSection === id ? "is-active" : ""}
@@ -298,8 +312,12 @@ export default function Page() {
                 <b>PDF digital</b>
               </div>
               <div className="product-card product-card--right">
-                <span>Acesso</span>
-                <b>Imediato</b>
+                <span>Começo</span>
+                <b>Acesso imediato</b>
+              </div>
+              <div className="product-note">
+                <span>Experiência de leitura</span>
+                <p>silenciosa, editorial e feita para celular</p>
               </div>
             </div>
           </motion.div>
@@ -314,6 +332,28 @@ export default function Page() {
             volta.
           </p>
         </Reveal>
+
+        <section className="section emotional-map">
+          <Reveal className="section-head">
+            <p className="eyebrow">Identificação silenciosa</p>
+            <h2>Para quem sente que está funcionando por fora, mas distante por dentro.</h2>
+          </Reveal>
+          <motion.div
+            className="signal-grid"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-70px" }}
+          >
+            {emotionalSignals.map(([title, text]) => (
+              <motion.article className="signal-card" key={title} variants={reveal}>
+                <span />
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </motion.article>
+            ))}
+          </motion.div>
+        </section>
 
         <section className="section" id="dentro">
           <Reveal className="section-head">
@@ -371,10 +411,36 @@ export default function Page() {
               <p>Um trecho de leitura leve para recuperar presença sem se cobrar.</p>
             </motion.div>
             <motion.div className="page-preview page-preview--two" variants={reveal}>
-              <small>Exercicio</small>
+              <small>Exercício</small>
               <h3>O que eu consigo fazer hoje?</h3>
               <p>Uma pergunta por vez. Um gesto pequeno. Uma volta possível.</p>
             </motion.div>
+          </motion.div>
+        </section>
+
+        <section className="inside-system section">
+          <Reveal className="section-head">
+            <p className="eyebrow">Por dentro do guia</p>
+            <h2>Beleza para dar vontade. Estrutura para realmente ajudar.</h2>
+            <p>
+              O valor do ebook está na mistura entre leitura emocional e ações
+              simples: você entende o que está sentindo e encontra uma próxima
+              atitude pequena o bastante para começar hoje.
+            </p>
+          </Reveal>
+          <motion.div
+            className="product-pages"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-70px" }}
+          >
+            {productPages.map(([title, text]) => (
+              <motion.article className="product-page" key={title} variants={reveal}>
+                <small>{title}</small>
+                <p>{text}</p>
+              </motion.article>
+            ))}
           </motion.div>
         </section>
 
@@ -448,10 +514,26 @@ export default function Page() {
           </ul>
         </Reveal>
 
+        <section className="value-bridge section">
+          <Reveal className="value-bridge__inner">
+            <div>
+              <p className="eyebrow">Percepção de valor</p>
+              <h2>Um material para abrir quando você precisa voltar ao básico sem se diminuir.</h2>
+            </div>
+            <div className="value-copy">
+              <p>
+                Ele não tenta substituir sua vida por uma rotina perfeita. Ele
+                organiza o começo: corpo, mente, ambiente e pequenos rituais que
+                ajudam você a se tratar com mais presença.
+              </p>
+            </div>
+          </Reveal>
+        </section>
+
         <section className="testimonials section">
           <Reveal className="section-head">
             <p className="eyebrow">Sensações possíveis</p>
-            <h2>Depoimentos estéticos para sentir o tom.</h2>
+            <h2>Feedbacks com cara de gente real, não de promessa pronta.</h2>
           </Reveal>
           <motion.div
             className="testimonial-grid"
@@ -460,10 +542,14 @@ export default function Page() {
             whileInView="visible"
             viewport={{ once: true, margin: "-70px" }}
           >
-            {testimonials.map(([quote, name]) => (
+            {testimonials.map(([quote, name, context]) => (
               <motion.blockquote key={name} variants={reveal}>
+                <span className="quote-mark">“</span>
                 <p>{quote}</p>
-                <cite>{name}</cite>
+                <cite>
+                  {name}
+                  <small>{context}</small>
+                </cite>
               </motion.blockquote>
             ))}
           </motion.div>
