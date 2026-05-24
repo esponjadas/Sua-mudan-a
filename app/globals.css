@@ -369,6 +369,32 @@ h2 em {
   font-size: 0.76rem;
 }
 
+.hero__micro-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 18px;
+  color: var(--faint);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero__micro-proof span {
+  position: relative;
+}
+
+.hero__micro-proof span:not(:last-child)::after {
+  position: absolute;
+  top: 50%;
+  right: -11px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  content: "";
+  background: rgba(201, 169, 110, 0.7);
+}
+
 .hero__visual {
   position: relative;
   min-height: 650px;
@@ -560,8 +586,30 @@ h2 em {
 .product-showcase h2,
 .benefits h2 {
   margin-bottom: 18px;
-  font-size: clamp(2.55rem, 5vw, 5.45rem);
+  font-size: clamp(2.35rem, 4.4vw, 4.85rem);
   line-height: 1.02;
+}
+
+.section-head--compact {
+  max-width: 690px;
+}
+
+.section-head--compact h2 {
+  font-size: clamp(2.05rem, 3.5vw, 3.8rem);
+  line-height: 1.08;
+}
+
+.section-head--balanced h2 {
+  font-size: clamp(2.25rem, 4vw, 4.3rem);
+}
+
+.section-head--quiet {
+  max-width: 640px;
+}
+
+.section-head--quiet h2 {
+  font-size: clamp(1.95rem, 3.1vw, 3.25rem);
+  line-height: 1.12;
 }
 
 .section-head p:not(.eyebrow),
@@ -817,6 +865,135 @@ blockquote p,
   line-height: 1.08;
 }
 
+.reading-moment {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: clamp(34px, 6vw, 84px);
+  align-items: center;
+  padding-top: clamp(72px, 9vw, 118px);
+  padding-bottom: clamp(72px, 9vw, 118px);
+}
+
+.reading-moment__copy h2 {
+  margin-bottom: 18px;
+  font-size: clamp(2.15rem, 3.8vw, 4.1rem);
+  line-height: 1.04;
+}
+
+.reading-moment__copy p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.reading-moment__scene {
+  position: relative;
+  min-height: 560px;
+  display: grid;
+  place-items: center;
+}
+
+.reading-moment__scene::before {
+  position: absolute;
+  width: min(520px, 82vw);
+  height: min(520px, 82vw);
+  border-radius: 50%;
+  content: "";
+  background:
+    radial-gradient(circle at 48% 42%, rgba(242, 236, 227, 0.13), transparent 12rem),
+    radial-gradient(circle, rgba(201, 169, 110, 0.18), transparent 21rem);
+  filter: blur(20px);
+  animation: slowLight 9s ease-in-out infinite alternate;
+}
+
+.reading-phone {
+  position: relative;
+  z-index: 2;
+  width: min(330px, 78vw);
+  padding: 18px;
+  border: 1px solid rgba(221, 208, 187, 0.18);
+  border-radius: 38px;
+  background:
+    linear-gradient(145deg, rgba(242, 236, 227, 0.13), rgba(242, 236, 227, 0.035)),
+    rgba(9, 8, 7, 0.72);
+  box-shadow:
+    0 44px 130px rgba(0, 0, 0, 0.54),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+}
+
+.reading-phone > span {
+  display: block;
+  padding: 18px 14px 8px;
+  color: var(--gold);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.reading-phone h3 {
+  margin: 18px 0 20px;
+  color: var(--cream);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.45rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.reading-phone ul {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.reading-phone li {
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(242, 236, 227, 0.06);
+}
+
+.reading-phone b,
+.reading-phone small {
+  display: block;
+}
+
+.reading-phone b {
+  margin-bottom: 9px;
+  color: var(--cream);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.reading-phone small {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.reading-card {
+  position: absolute;
+  right: 0;
+  bottom: 18%;
+  z-index: 3;
+  width: min(330px, 58%);
+  padding: 24px;
+  border: 1px solid rgba(221, 208, 187, 0.12);
+  border-radius: 28px;
+  background: rgba(20, 18, 16, 0.72);
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(22px);
+}
+
+.reading-card p {
+  margin: 0;
+  color: var(--sand);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.65rem;
+  line-height: 1.18;
+}
+
 .difference h3 {
   margin-top: 0;
 }
@@ -833,7 +1010,7 @@ blockquote p,
   margin: 0;
   color: var(--cream);
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3rem, 8vw, 8rem);
+  font-size: clamp(2.55rem, 6.7vw, 6.6rem);
   line-height: 0.95;
 }
 
@@ -904,6 +1081,11 @@ blockquote p,
   line-height: 1.85;
 }
 
+.value-cta {
+  width: fit-content;
+  margin-top: 24px;
+}
+
 blockquote {
   margin: 0;
   min-height: 232px;
@@ -957,10 +1139,12 @@ blockquote cite small {
   border: 1px solid rgba(221, 208, 187, 0.12);
   border-radius: 44px;
   background:
-    radial-gradient(circle at 76% 16%, rgba(201, 169, 110, 0.23), transparent 30rem),
+    radial-gradient(circle at 76% 16%, rgba(201, 169, 110, 0.3), transparent 30rem),
     radial-gradient(circle at 18% 80%, rgba(242, 236, 227, 0.08), transparent 25rem),
     linear-gradient(145deg, rgba(242, 236, 227, 0.11), rgba(242, 236, 227, 0.035));
-  box-shadow: var(--shadow);
+  box-shadow:
+    0 48px 150px rgba(0, 0, 0, 0.62),
+    0 0 90px rgba(201, 169, 110, 0.08);
 }
 
 .final__inner::before {
@@ -982,6 +1166,9 @@ blockquote cite small {
   display: grid;
   gap: 5px;
   margin: 22px 0 24px;
+  padding: 22px 0;
+  border-top: 1px solid rgba(221, 208, 187, 0.12);
+  border-bottom: 1px solid rgba(221, 208, 187, 0.12);
 }
 
 .price span {
@@ -1004,6 +1191,21 @@ blockquote cite small {
   color: var(--gold-soft);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.final__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 24px;
+}
+
+.final__details span {
+  padding: 8px 10px;
+  border-radius: 999px;
+  color: rgba(242, 236, 227, 0.72);
+  background: rgba(242, 236, 227, 0.06);
+  font-size: 0.72rem;
 }
 
 .final__mockup {
@@ -1169,6 +1371,16 @@ blockquote cite small {
   }
 }
 
+@keyframes slowLight {
+  from {
+    transform: translate3d(-12px, 8px, 0) scale(0.96);
+  }
+
+  to {
+    transform: translate3d(16px, -10px, 0) scale(1.04);
+  }
+}
+
 @media (max-width: 1020px) {
   .nav {
     display: none;
@@ -1180,6 +1392,7 @@ blockquote cite small {
   }
 
   .hero,
+  .reading-moment,
   .product-showcase,
   .benefits,
   .final__inner {
@@ -1276,6 +1489,22 @@ blockquote cite small {
     margin-bottom: 24px;
   }
 
+  .reading-moment {
+    gap: 24px;
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .reading-moment__scene {
+    min-height: 520px;
+  }
+
+  .reading-card {
+    right: 4%;
+    bottom: 8%;
+    width: min(300px, 70%);
+  }
+
   .showcase-stack {
     min-height: 660px;
   }
@@ -1315,6 +1544,10 @@ blockquote cite small {
   .value-bridge__inner {
     grid-template-columns: 1fr;
     border-radius: 30px;
+  }
+
+  .value-cta {
+    width: 100%;
   }
 
   .product-page p {
@@ -1393,8 +1626,14 @@ blockquote cite small {
   .product-showcase h2,
   .benefits h2,
   .emotional h2,
-  .final h2 {
+  .final h2,
+  .reading-moment__copy h2 {
     font-size: clamp(2.35rem, 11vw, 3.55rem);
+  }
+
+  .section-head--quiet h2,
+  .section-head--compact h2 {
+    font-size: clamp(2rem, 9.5vw, 3rem);
   }
 
   .hero__visual,
@@ -1415,12 +1654,34 @@ blockquote cite small {
     min-height: auto;
   }
 
+  .reading-moment__scene {
+    min-height: 500px;
+  }
+
+  .reading-phone {
+    width: min(310px, 88vw);
+  }
+
+  .reading-card {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 92%;
+    margin: -34px 0 0 auto;
+  }
+
+  .reading-card p {
+    font-size: 1.38rem;
+  }
+
   .cinematic-lines {
     gap: 34px;
+    padding-top: 42px;
+    padding-bottom: 42px;
   }
 
   .cinematic-lines p {
-    font-size: clamp(2.5rem, 14vw, 4.4rem);
+    font-size: clamp(2.2rem, 12vw, 3.75rem);
   }
 
   blockquote p {
@@ -1433,6 +1694,11 @@ blockquote cite small {
 
   .price b {
     font-size: 3rem;
+  }
+
+  .final__details {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .footer__links {

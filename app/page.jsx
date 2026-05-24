@@ -40,6 +40,12 @@ const productPages = [
   ["Sistema de 30 dias", "estrutura simples para transformar cuidado em constância"],
 ];
 
+const practicalSnippets = [
+  ["Hoje eu consigo", "beber água antes do café", "abrir a janela por 3 minutos"],
+  ["Quando pesar", "reduzir a meta sem abandonar", "voltar pelo menor gesto"],
+  ["À noite", "nomear uma coisa que funcionou", "desligar sem culpa"],
+];
+
 const differences = [
   ["Sem linguagem coach", "Nada de frases prontas. O tom é humano, baixo e real."],
   ["Sem promessas irreais", "A proposta é direção, não perfeição instantânea."],
@@ -296,6 +302,11 @@ export default function Page() {
               <span>Leitura cinematográfica</span>
               <span>Otimizado para celular</span>
             </motion.div>
+            <motion.div className="hero__micro-proof" variants={reveal}>
+              <span>PDF digital</span>
+              <span>acesso imediato</span>
+              <span>pagamento único</span>
+            </motion.div>
           </motion.div>
 
           <motion.div className="hero__visual" style={{ y: heroY }}>
@@ -334,7 +345,7 @@ export default function Page() {
         </Reveal>
 
         <section className="section emotional-map">
-          <Reveal className="section-head">
+          <Reveal className="section-head section-head--compact">
             <p className="eyebrow">Identificação silenciosa</p>
             <h2>Para quem sente que está funcionando por fora, mas distante por dentro.</h2>
           </Reveal>
@@ -356,7 +367,7 @@ export default function Page() {
         </section>
 
         <section className="section" id="dentro">
-          <Reveal className="section-head">
+          <Reveal className="section-head section-head--balanced">
             <p className="eyebrow">O que você vai encontrar</p>
             <h2>Um mapa calmo para recomeçar sem pressa.</h2>
             <p>
@@ -419,7 +430,7 @@ export default function Page() {
         </section>
 
         <section className="inside-system section">
-          <Reveal className="section-head">
+          <Reveal className="section-head section-head--balanced">
             <p className="eyebrow">Por dentro do guia</p>
             <h2>Beleza para dar vontade. Estrutura para realmente ajudar.</h2>
             <p>
@@ -444,8 +455,47 @@ export default function Page() {
           </motion.div>
         </section>
 
+        <section className="reading-moment section">
+          <Reveal className="reading-moment__copy">
+            <p className="eyebrow">Momento de leitura</p>
+            <h2>O ebook foi pensado para abrir no celular quando o dia pede silêncio.</h2>
+            <p>
+              Não é uma lista infinita de tarefas. É uma sequência de páginas
+              curtas, exercícios simples e pequenas decisões para você voltar a
+              se sentir presente.
+            </p>
+          </Reveal>
+          <motion.div
+            className="reading-moment__scene"
+            variants={stagger}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-70px" }}
+          >
+            <motion.div className="reading-phone" variants={reveal}>
+              <span>Volte Para Você</span>
+              <h3>Plano de hoje</h3>
+              <ul>
+                {practicalSnippets.map(([label, first, second]) => (
+                  <li key={label}>
+                    <b>{label}</b>
+                    <small>{first}</small>
+                    <small>{second}</small>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+            <motion.div className="reading-card" variants={reveal}>
+              <p>
+                "Você não precisa recomeçar grande. Precisa recomeçar de um
+                jeito que consiga repetir amanhã."
+              </p>
+            </motion.div>
+          </motion.div>
+        </section>
+
         <section className="section" id="experiencia">
-          <Reveal className="section-head">
+          <Reveal className="section-head section-head--quiet">
             <p className="eyebrow">O que torna diferente</p>
             <h2>Um ebook para sentir, não apenas consumir.</h2>
           </Reveal>
@@ -481,7 +531,7 @@ export default function Page() {
         </section>
 
         <section className="contents section">
-          <Reveal className="section-head">
+          <Reveal className="section-head section-head--balanced">
             <p className="eyebrow">O que existe dentro</p>
             <h2>Um sumário que parece uma conversa que você precisava ter.</h2>
           </Reveal>
@@ -526,12 +576,15 @@ export default function Page() {
                 organiza o começo: corpo, mente, ambiente e pequenos rituais que
                 ajudam você a se tratar com mais presença.
               </p>
+              <BuyButton className="button button--ghost value-cta">
+                Quero começar com calma
+              </BuyButton>
             </div>
           </Reveal>
         </section>
 
         <section className="testimonials section">
-          <Reveal className="section-head">
+          <Reveal className="section-head section-head--quiet">
             <p className="eyebrow">Sensações possíveis</p>
             <h2>Feedbacks com cara de gente real, não de promessa pronta.</h2>
           </Reveal>
@@ -571,6 +624,11 @@ export default function Page() {
                 <span>De R$97,90</span>
                 <b>Por R$29,90</b>
                 <small>Pagamento único • acesso imediato</small>
+              </div>
+              <div className="final__details" aria-label="Detalhes do produto">
+                <span>ebook digital em PDF</span>
+                <span>leitura pelo celular</span>
+                <span>experiência premium</span>
               </div>
               <BuyButton>Começar meu retorno</BuyButton>
             </div>
